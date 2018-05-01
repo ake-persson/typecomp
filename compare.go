@@ -2,7 +2,6 @@ package cmp
 
 import (
 	"reflect"
-	"regexp"
 	"time"
 )
 
@@ -155,21 +154,4 @@ func Lte(a, b interface{}) (bool, error) {
 // Gte compare values and return true if the first is greater or equal.
 func Gte(a, b interface{}) (bool, error) {
 	return Lte(b, a)
-}
-
-// Re return true if regular expression matches value.
-func Re(expr string, a interface{}) (bool, error) {
-	re, err := regexp.Compile(expr)
-	if err != nil {
-		return false, err
-	}
-
-	va := reflect.Indirect(reflect.ValueOf(a))
-
-	switch va.Kind() {
-	case reflect.String:
-		return re.MatchString(va.Interface().(string)), nil
-	}
-
-	return false, ErrKindNotSupported
 }

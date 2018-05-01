@@ -34,50 +34,65 @@ var testData = []testPair{
 	testPair{a: true, b: true, expEq: true, expNeq: false},
 	testPair{a: true, b: false, expEq: false, expNeq: true},
 
-	testPair{a: int(1), b: int(1), expEq: true, expNeq: false, expLt: false},
-	testPair{a: int(1), b: int(2), expEq: false, expNeq: true, expLt: true},
+	testPair{a: int(1), b: int(1), expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: int(1), b: int(2), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: int(2), b: int(1), expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: int8(1), b: int8(1), expEq: true, expNeq: false, expLt: false},
-	testPair{a: int8(1), b: int8(2), expEq: false, expNeq: true, expLt: true},
+	testPair{a: int8(1), b: int8(1), expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: int8(1), b: int8(2), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: int8(2), b: int8(1), expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: int16(1), b: int16(1), expEq: true, expNeq: false, expLt: false},
-	testPair{a: int16(1), b: int16(2), expEq: false, expNeq: true, expLt: true},
+	testPair{a: int16(1), b: int16(1), expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: int16(1), b: int16(2), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: int16(2), b: int16(1), expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: int32(1), b: int32(1), expEq: true, expNeq: false, expLt: false},
-	testPair{a: int32(1), b: int32(2), expEq: false, expNeq: true, expLt: true},
+	testPair{a: int32(1), b: int32(1), expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: int32(1), b: int32(2), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: int32(2), b: int32(1), expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: int64(1), b: int64(1), expEq: true, expNeq: false, expLt: false},
-	testPair{a: int64(1), b: int64(2), expEq: false, expNeq: true, expLt: true},
+	testPair{a: int64(1), b: int64(1), expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: int64(1), b: int64(2), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: int64(2), b: int64(1), expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: uint(1), b: uint(1), expEq: true, expNeq: false, expLt: false},
-	testPair{a: uint(1), b: uint(2), expEq: false, expNeq: true, expLt: true},
+	testPair{a: uint(1), b: uint(1), expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: uint(1), b: uint(2), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: uint(2), b: uint(1), expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: uint8(1), b: uint8(1), expEq: true, expNeq: false, expLt: false},
-	testPair{a: uint8(1), b: uint8(2), expEq: false, expNeq: true, expLt: true},
+	testPair{a: uint8(1), b: uint8(1), expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: uint8(1), b: uint8(2), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: uint8(2), b: uint8(1), expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: uint16(1), b: uint16(1), expEq: true, expNeq: false, expLt: false},
-	testPair{a: uint16(1), b: uint16(2), expEq: false, expNeq: true, expLt: true},
+	testPair{a: uint16(1), b: uint16(1), expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: uint16(1), b: uint16(2), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: uint16(2), b: uint16(1), expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: uint32(1), b: uint32(1), expEq: true, expNeq: false, expLt: false},
-	testPair{a: uint32(1), b: uint32(2), expEq: false, expNeq: true, expLt: true},
+	testPair{a: uint32(1), b: uint32(1), expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: uint32(1), b: uint32(2), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: uint32(2), b: uint32(1), expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: uint64(1), b: uint64(1), expEq: true, expNeq: false, expLt: false},
-	testPair{a: uint64(1), b: uint64(2), expEq: false, expNeq: true, expLt: true},
+	testPair{a: uint64(1), b: uint64(1), expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: uint64(1), b: uint64(2), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: uint64(2), b: uint64(1), expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: float32(1), b: float32(1), expEq: true, expNeq: false, expLt: false},
-	testPair{a: float32(1), b: float32(2), expEq: false, expNeq: true, expLt: true},
+	testPair{a: float32(1), b: float32(1), expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: float32(1), b: float32(2), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: float32(2), b: float32(1), expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: float64(1), b: float64(1), expEq: true, expNeq: false, expLt: false},
-	testPair{a: float64(1), b: float64(2), expEq: false, expNeq: true, expLt: true},
+	testPair{a: float64(1), b: float64(1), expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: float64(1), b: float64(2), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: float64(2), b: float64(1), expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: now, b: now, expEq: true, expNeq: false, expLt: false},
-	testPair{a: now, b: now.Add(time.Second), expEq: false, expNeq: true, expLt: true},
+	testPair{a: now, b: now, expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: now, b: now.Add(time.Second), expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: now.Add(time.Second), b: now, expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: "abc123", b: "abc123", expEq: true, expNeq: false, expLt: false},
-	testPair{a: "abc123", b: "def456", expEq: false, expNeq: true, expLt: true},
+	testPair{a: "abc123", b: "abc123", expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: "abc123", b: "def456", expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: "def456", b: "abc123", expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 
-	testPair{a: testInterface{1}, b: testInterface{1}, expEq: true, expNeq: false, expLt: false},
-	testPair{a: testInterface{1}, b: testInterface{2}, expEq: false, expNeq: true, expLt: true},
+	testPair{a: testInterface{1}, b: testInterface{1}, expEq: true, expNeq: false, expLt: false, expGt: false, expLte: true, expGte: true},
+	testPair{a: testInterface{1}, b: testInterface{2}, expEq: false, expNeq: true, expLt: true, expGt: false, expLte: true, expGte: false},
+	testPair{a: testInterface{2}, b: testInterface{1}, expEq: false, expNeq: true, expLt: false, expGt: true, expLte: false, expGte: true},
 }
 
 func TestCompare(t *testing.T) {
@@ -129,6 +144,30 @@ func TestCompare(t *testing.T) {
 		}
 		if m != d.expLt {
 			t.Errorf("want:\n%v, got:\n%v", d.expLt, m)
+		}
+
+		m, err = Gt(d.a, d.b)
+		if err != nil {
+			t.Error(err)
+		}
+		if m != d.expGt {
+			t.Errorf("want:\n%v, got:\n%v", d.expGt, m)
+		}
+
+		m, err = Lte(d.a, d.b)
+		if err != nil {
+			t.Error(err)
+		}
+		if m != d.expLte {
+			t.Errorf("want:\n%v, got:\n%v", d.expLte, m)
+		}
+
+		m, err = Gte(d.a, d.b)
+		if err != nil {
+			t.Error(err)
+		}
+		if m != d.expGte {
+			t.Errorf("want:\n%v, got:\n%v", d.expGte, m)
 		}
 	}
 }
