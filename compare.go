@@ -6,11 +6,13 @@ import (
 	"time"
 )
 
+// Comparer interface
 type Comparer interface {
 	Eq(b interface{}) (bool, error)
 	Lt(b interface{}) (bool, error)
 }
 
+// Eq compare values and return true if they are the same.
 func Eq(a, b interface{}) (bool, error) {
 	va := reflect.Indirect(reflect.ValueOf(a))
 	vb := reflect.Indirect(reflect.ValueOf(b))
@@ -61,12 +63,14 @@ func Eq(a, b interface{}) (bool, error) {
 	return false, ErrKindNotSupported
 }
 
+// Neq compare values and return true if they are not the same.
 func Neq(a, b interface{}) (bool, error) {
 	m, err := Eq(a, b)
 	m = !m
 	return m, err
 }
 
+// Lt compare values and return true if the first is less.
 func Lt(a, b interface{}) (bool, error) {
 	va := reflect.Indirect(reflect.ValueOf(a))
 	vb := reflect.Indirect(reflect.ValueOf(b))
@@ -114,10 +118,12 @@ func Lt(a, b interface{}) (bool, error) {
 	return false, ErrKindNotSupported
 }
 
+// Gt compare values and return true if the first is greater then.
 func Gt(a, b interface{}) (bool, error) {
 	return Lt(b, a)
 }
 
+// Lte compare values and return true if the first is less or equal.
 func Lte(a, b interface{}) (bool, error) {
 	m1, err := Lt(a, b)
 	if err != nil {
@@ -136,10 +142,12 @@ func Lte(a, b interface{}) (bool, error) {
 	return false, nil
 }
 
+// Gte compare values and return true if the first is greater or equal.
 func Gte(a, b interface{}) (bool, error) {
 	return Lte(b, a)
 }
 
+// Re return true if regular expression matches value.
 func Re(expr string, a interface{}) (bool, error) {
 	re, err := regexp.Compile(expr)
 	if err != nil {
