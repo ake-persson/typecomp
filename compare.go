@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// Comparer interface
+// Comparer interface to extend structs.
 type Comparer interface {
 	Eq(b interface{}) (bool, error)
 	Lt(b interface{}) (bool, error)
@@ -46,6 +46,11 @@ func Eq(a, b interface{}) (bool, error) {
 		return a.(uint32) == b.(uint32), nil
 	case reflect.Uint64:
 		return a.(uint64) == b.(uint64), nil
+
+	case reflect.Float32:
+		return a.(float32) == b.(float32), nil
+	case reflect.Float64:
+		return a.(float64) == b.(float64), nil
 
 	case reflect.String:
 		return a.(string) == b.(string), nil
@@ -101,6 +106,11 @@ func Lt(a, b interface{}) (bool, error) {
 		return a.(uint32) < b.(uint32), nil
 	case reflect.Uint64:
 		return a.(uint64) < b.(uint64), nil
+
+	case reflect.Float32:
+		return a.(float32) < b.(float32), nil
+	case reflect.Float64:
+		return a.(float64) < b.(float64), nil
 
 	case reflect.String:
 		return a.(string) < b.(string), nil
