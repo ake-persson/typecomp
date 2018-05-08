@@ -1,6 +1,7 @@
 package cmp
 
 import (
+	"fmt"
 	"reflect"
 	"time"
 
@@ -32,11 +33,13 @@ func Eq(a, b interface{}) (bool, error) {
 				return false, err
 			}
 			vb = reflect.Indirect(v)
-			b = va.Interface()
+			b = vb.Interface()
 		} else {
 			return false, ErrNotSameKind
 		}
 	}
+
+	fmt.Printf("a: %v b: %v\n", a, b)
 
 	switch va.Kind() {
 	case reflect.Bool:
@@ -111,11 +114,13 @@ func Lt(a, b interface{}) (bool, error) {
 				return false, err
 			}
 			vb = reflect.Indirect(v)
-			b = va.Interface()
+			b = vb.Interface()
 		} else {
 			return false, ErrNotSameKind
 		}
 	}
+
+	fmt.Printf("a: %v b: %v\n", a, b)
 
 	switch va.Kind() {
 	case reflect.Int:
