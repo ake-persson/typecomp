@@ -28,7 +28,7 @@ func Eq(a, b interface{}) (bool, error) {
 			a = va.Interface()
 		} else if vb.Kind() == reflect.String {
 			v := reflect.New(va.Type())
-			if err := cnv.Parse(vb.Interface().(string), b); err != nil {
+			if err := cnv.Parse(vb.Interface().(string), v.Interface()); err != nil {
 				return false, err
 			}
 			vb = reflect.Indirect(v)
@@ -107,7 +107,7 @@ func Lt(a, b interface{}) (bool, error) {
 			a = va.Interface()
 		} else if vb.Kind() == reflect.String {
 			v := reflect.New(va.Type())
-			if err := cnv.Parse(vb.Interface().(string), b); err != nil {
+			if err := cnv.Parse(vb.Interface().(string), v.Interface()); err != nil {
 				return false, err
 			}
 			vb = reflect.Indirect(v)
