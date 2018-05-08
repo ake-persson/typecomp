@@ -54,4 +54,10 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("ok: %v\n", ok)
+
+	ok, err = cmp.Eq("123", 123)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("ok: %v\n", ok)
 }

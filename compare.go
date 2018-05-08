@@ -3,6 +3,8 @@ package cmp
 import (
 	"reflect"
 	"time"
+
+	"github.com/mickep76/cnv"
 )
 
 // Comparer interface to extend structs.
@@ -17,7 +19,23 @@ func Eq(a, b interface{}) (bool, error) {
 	vb := reflect.Indirect(reflect.ValueOf(b))
 
 	if va.Kind() != vb.Kind() {
-		return false, ErrNotSameKind
+		if va.Kind() == reflect.String {
+			v := reflect.New(vb.Type())
+			if err := cnv.Parse(va.Interface().(string), v.Interface()); err != nil {
+				return false, err
+			}
+			va = reflect.Indirect(v)
+			a = va.Interface()
+		} else if vb.Kind() == reflect.String {
+			v := reflect.New(va.Type())
+			if err := cnv.Parse(vb.Interface().(string), b); err != nil {
+				return false, err
+			}
+			vb = reflect.Indirect(v)
+			b = va.Interface()
+		} else {
+			return false, ErrNotSameKind
+		}
 	}
 
 	switch va.Kind() {
@@ -80,7 +98,23 @@ func Lt(a, b interface{}) (bool, error) {
 	vb := reflect.Indirect(reflect.ValueOf(b))
 
 	if va.Kind() != vb.Kind() {
-		return false, ErrNotSameKind
+		if va.Kind() == reflect.String {
+			v := reflect.New(vb.Type())
+			if err := cnv.Parse(va.Interface().(string), v.Interface()); err != nil {
+				return false, err
+			}
+			va = reflect.Indirect(v)
+			a = va.Interface()
+		} else if vb.Kind() == reflect.String {
+			v := reflect.New(va.Type())
+			if err := cnv.Parse(vb.Interface().(string), b); err != nil {
+				return false, err
+			}
+			vb = reflect.Indirect(v)
+			b = va.Interface()
+		} else {
+			return false, ErrNotSameKind
+		}
 	}
 
 	switch va.Kind() {
