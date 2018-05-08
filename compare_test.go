@@ -96,7 +96,7 @@ var testData = []testPair{
 }
 
 func TestCompare(t *testing.T) {
-	_, err := Eq(1, "abc123")
+	_, err := Eq(1, 1.1)
 	if err != ErrNotSameKind {
 		t.Error(err)
 	}
@@ -106,7 +106,7 @@ func TestCompare(t *testing.T) {
 		t.Error(err)
 	}
 
-	_, err = Lt(1, "abc123")
+	_, err = Lt(1, 1.1)
 	if err != ErrNotSameKind {
 		t.Error(err)
 	}
