@@ -1,5 +1,5 @@
-module github.com/ake-persson/cmp
+module github.com/ake-persson/typecomp
 
 go 1.16
 
-require github.com/ake-persson/cnv v0.0.0-20210720084139-744ba2b2c943
+require github.com/ake-persson/typeconv v0.0.0-20210720085626-165a1a0535d7 // indirect

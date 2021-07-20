@@ -1,7 +1,7 @@
-[![GoDoc](https://godoc.org/github.com/ake-persson/cmp?status.svg)](https://godoc.org/github.com/ake-persson/cmp)
-[![codecov](https://codecov.io/gh/ake-persson/cmp/branch/master/graph/badge.svg)](https://codecov.io/gh/ake-persson/cmp)
-[![Build Status](https://travis-ci.org/ake-persson/cmp.svg?branch=master)](https://travis-ci.org/ake-persson/cmp)
-[![Go Report Card](https://goreportcard.com/badge/github.com/ake-persson/cmp)](https://goreportcard.com/report/github.com/ake-persson/cmp)
+[![GoDoc](https://godoc.org/github.com/ake-persson/typecomp?status.svg)](https://godoc.org/github.com/ake-persson/typecomp)
+[![codecov](https://codecov.io/gh/ake-persson/typecomp/branch/master/graph/badge.svg)](https://codecov.io/gh/ake-persson/typecomp)
+[![Build Status](https://travis-ci.org/ake-persson/typecomp.svg?branch=master)](https://travis-ci.org/ake-persson/typecomp)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ake-persson/typecomp)](https://goreportcard.com/report/github.com/ake-persson/typecomp)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/ake-persson/mlfmt/blob/master/LICENSE)
 
 # cmp
@@ -15,7 +15,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ake-persson/kvstore/cmp"
+	cmp "github.com/ake-persson/kvstore/cmp"
 )
 
 type Car struct {

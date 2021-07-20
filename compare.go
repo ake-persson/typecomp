@@ -1,10 +1,10 @@
-package cmp
+package typecomp
 
 import (
 	"reflect"
 	"time"
 
-	"github.com/ake-persson/cnv"
+	"github.com/ake-persson/typeconv"
 )
 
 // Comparer interface to extend structs.
