@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/mickep76/cmp"
+	"github.com/ake-persson/cmp"
 )
 
 // Car type for examp;e.

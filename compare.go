@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/mickep76/cnv"
+	"github.com/ake-persson/cnv"
 )
 
 // Comparer interface to extend structs.

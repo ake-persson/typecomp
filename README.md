@@ -1,8 +1,8 @@
-[![GoDoc](https://godoc.org/github.com/mickep76/cmp?status.svg)](https://godoc.org/github.com/mickep76/cmp)
-[![codecov](https://codecov.io/gh/mickep76/cmp/branch/master/graph/badge.svg)](https://codecov.io/gh/mickep76/cmp)
-[![Build Status](https://travis-ci.org/mickep76/cmp.svg?branch=master)](https://travis-ci.org/mickep76/cmp)
-[![Go Report Card](https://goreportcard.com/badge/github.com/mickep76/cmp)](https://goreportcard.com/report/github.com/mickep76/cmp)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/mickep76/mlfmt/blob/master/LICENSE)
+[![GoDoc](https://godoc.org/github.com/ake-persson/cmp?status.svg)](https://godoc.org/github.com/ake-persson/cmp)
+[![codecov](https://codecov.io/gh/ake-persson/cmp/branch/master/graph/badge.svg)](https://codecov.io/gh/ake-persson/cmp)
+[![Build Status](https://travis-ci.org/ake-persson/cmp.svg?branch=master)](https://travis-ci.org/ake-persson/cmp)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ake-persson/cmp)](https://goreportcard.com/report/github.com/ake-persson/cmp)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/ake-persson/mlfmt/blob/master/LICENSE)
 
 # cmp
 
@@ -15,7 +15,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/mickep76/kvstore/cmp"
+	"github.com/ake-persson/kvstore/cmp"
 )
 
 type Car struct {
